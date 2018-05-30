@@ -42,8 +42,7 @@
   (-add-watch [this key callback]
     (add-watch state (list this key)
       (fn [_ _ oldv newv]
-        (when (not= oldv newv)
-          (callback key this oldv newv))))
+        (callback key this oldv newv)))
     this)
 
   (-remove-watch [this key]

@@ -27,8 +27,7 @@
       (fn [_ _ oldv newv]
         (let [old (reducer (get-in oldv path))
               new (reducer (get-in newv path))]
-          (when (not= old new)
-            (callback key this old new)))))
+          (callback key this old new))))
     this)
 
   (-remove-watch [this key]
